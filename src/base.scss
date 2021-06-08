@@ -1,0 +1,37 @@
+body {
+  background-color: #fff;
+  color: #212121;
+  line-height: 1.5;
+  font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, 'Open Sans', Ubuntu, Cantarell, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.AppBar {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 1px solid #ccc;
+}
+.MoviesTitle {
+  text-align: center;
+}
+
+.MovieList {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: -20px;
+  padding: 0;
+}
+.MovieItem {
+  width: calc((100% / 3) - 40px);
+  margin: 20px;
+}
