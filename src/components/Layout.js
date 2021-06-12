@@ -1,5 +1,6 @@
 import React from 'react';
 import Appbar from './Appbar';
+import PropTypes from 'prop-types';
 
 const styles = {
   maxWidth: 1170,
@@ -17,3 +18,7 @@ const Layout = ({ children }) => (
 );
 
 export default Layout;
+
+Layout.protoType = {
+  children: PropTypes.element.isRequired,
+};

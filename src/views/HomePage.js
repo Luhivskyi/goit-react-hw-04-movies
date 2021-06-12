@@ -15,7 +15,7 @@ class Home extends Component {
     const defaultImgUrl = `https://image.tmdb.org/t/p/w500`;
     return (
       <div className="HomeView">
-        <h1 className="MoviesTitle">Популярные фильмы!</h1>
+        <h1 className="MoviesTitle">Популярні фільми!</h1>
         <ul className="MovieList">
           {shows &&
             shows.map(show => {

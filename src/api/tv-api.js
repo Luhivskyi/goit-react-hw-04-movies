@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 const baseURL = 'https://api.themoviedb.org';
 const API_KEY = '2e401267ec3824f6ba8ddc3e14ddc4e0';
 

@@ -9,7 +9,7 @@ class App extends Component {
       <Layout>
         <Suspense fallback={<h1>Loading...</h1>}>
           <Switch>
-            {routes.map(route => (
+            {routes.mainRoutes.map(route => (
               <Route key={route.path} {...route} />
             ))}
           </Switch>
