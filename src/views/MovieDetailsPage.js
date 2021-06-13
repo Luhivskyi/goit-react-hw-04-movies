@@ -1,29 +1,37 @@
-import React, { Suspense, Component, lazy } from 'react';
+import React, { Suspense, Component } from 'react';
 import api from '../api/tv-api';
 import { Switch, Route } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import routes from '../routes';
 
-class ShowDetails extends Component {
+import Cast from '../views/Cast';
+import Reviews from '../views/Reviews';
+
+// import routes from '../routes';
+
+class MovieDetailsPage extends Component {
   state = {
     show: null,
   };
+
   componentDidMount() {
-    const { location, match } = this.props;
+    const { movieId } = this.props.match.params;
 
-    const pathnameArray = location.pathname.split('/');
-    const lastElem = pathnameArray[pathnameArray.length - 1];
+    // const pathnameArray = location.pathname.split('/');
+    // const lastElem = pathnameArray[pathnameArray.length - 1];
 
-    console.log(lastElem);
-    console.log(match.params.movieId);
+    // console.log(lastElem);
+    // console.log(match.params.movieId);
 
-    (parseInt(lastElem) === match.params.movieId ||
-      lastElem === 'cast' ||
-      lastElem === 'reviews') &&
-      api
-        .fetchShowDetails(match.params.movieId)
-        .then(show => this.setState({ show }));
+    // (parseInt(lastElem) === match.params.movieId ||
+    //   lastElem === 'cast' ||
+    //   lastElem === 'reviews') &&
+    //   api
+    //     .fetchShowDetails(match.params.movieId)
+    //     .then(show => this.setState({ show }));
+
+    api.fetchShowDetails(movieId).then(data => this.setState({ show: data }));
   }
+
   render() {
     const { show } = this.state;
     const defaultImgUrl = `https://image.tmdb.org/t/p/w500`;
@@ -60,10 +68,15 @@ class ShowDetails extends Component {
             </nav>
             <Suspense fallback={<h1>Loading...</h1>}>
               <Switch>
+                <Route path="/movies/:movieId/cast" component={Cast} />
+                <Route path="/movies/:movieId/reviews" component={Reviews} />
+              </Switch>
+
+              {/* <Switch>
                 {routes.detailsRoutes.map(route => (
                   <Route key={route.path} {...route} />
                 ))}
-              </Switch>
+              </Switch> */}
             </Suspense>
           </div>
         )}
@@ -72,4 +85,4 @@ class ShowDetails extends Component {
   }
 }
 
-export default ShowDetails;
+export default MovieDetailsPage;

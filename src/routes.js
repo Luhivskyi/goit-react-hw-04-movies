@@ -27,6 +27,7 @@ const mainRoutes = [
     ),
   },
 ];
+
 const detailsRoutes = [
   {
     path: '/movies/:movieId/cast',

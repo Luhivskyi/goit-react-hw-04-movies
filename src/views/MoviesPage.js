@@ -39,6 +39,7 @@ class MoviesPage extends Component {
     return (
       <div>
         <Searchbox onSubmit={this.handleChangeQuery} />
+
         <ul className="MovieList">
           {shows &&
             shows.map(show => (

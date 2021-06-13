@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import api from '../api/tv-api';
 import { Link } from 'react-router-dom';
 
-class Home extends Component {
+class HomePage extends Component {
   state = {
     shows: null,
   };
@@ -40,4 +40,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default HomePage;

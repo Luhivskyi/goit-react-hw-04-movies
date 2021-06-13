@@ -3,20 +3,21 @@ import api from '../api/tv-api';
 
 class Reviews extends Component {
   state = {
-    show: null,
+    reviews: null,
   };
+
   componentDidMount() {
     api
       .fetchMovieReviews(this.props.match.params.movieId)
-      .then(show => this.setState({ show: show.results }));
+      .then(data => this.setState({ reviews: data.results }));
   }
 
   render() {
-    const { show } = this.state;
+    const { reviews } = this.state;
     return (
       <ul>
-        {show &&
-          show.map(elem => (
+        {reviews &&
+          reviews.map(elem => (
             <li key={elem.id}>
               <h1>{elem.author}</h1>
               <p>{elem.content}</p>

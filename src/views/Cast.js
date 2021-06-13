@@ -5,6 +5,7 @@ class Cast extends Component {
   state = {
     cast: null,
   };
+
   componentDidMount() {
     api
       .fetchMovieCast(this.props.match.params.movieId)
