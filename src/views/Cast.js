@@ -16,7 +16,7 @@ class Cast extends Component {
     const { cast } = this.state;
     return (
       <ul>
-        {cast && cast.cast.map(elem => <li key={elem.id}>{elem.name}</li>)}
+        {cast && cast.cast.map(elem => <li key={elem.id}>{elem.name}</li>)}{' '}
       </ul>
     );
   }
