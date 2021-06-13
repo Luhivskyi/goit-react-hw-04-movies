@@ -49,7 +49,7 @@ class MoviesPage extends Component {
                     state: { from: this.props.location },
                   }}
                 >
-                  <img src={defaultImgUrl + show.poster_path} />
+                  <img src={defaultImgUrl + show.poster_path} alt="" />
                   {show.original_title}
                 </Link>
               </li>

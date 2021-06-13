@@ -17,7 +17,7 @@ class ShowDetails extends Component {
     console.log(lastElem);
     console.log(match.params.movieId);
 
-    (parseInt(lastElem) == match.params.movieId ||
+    (parseInt(lastElem) === match.params.movieId ||
       lastElem === 'cast' ||
       lastElem === 'reviews') &&
       api
@@ -31,7 +31,7 @@ class ShowDetails extends Component {
       <div>
         {show && (
           <div>
-            <img src={defaultImgUrl + show.poster_path} width="250" />
+            <img src={defaultImgUrl + show.poster_path} width="250" alt="" />
             <h1>
               {show.original_title}
               {show.original_name}
