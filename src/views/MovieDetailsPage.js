@@ -49,7 +49,7 @@ class MovieDetailsPage extends Component {
                   activeClassName="active"
                   to={{
                     pathname: `/movies/${show.id}/cast`,
-                    state: { from: this.props.location },
+                    state: { from: this.props.location.state.from },
                   }}
                 >
                   <p>cast</p>
@@ -59,7 +59,7 @@ class MovieDetailsPage extends Component {
                   activeClassName="active"
                   to={{
                     pathname: `/movies/${show.id}/reviews`,
-                    state: { from: this.props.location },
+                    state: { from: this.props.location.state.from },
                   }}
                 >
                   <p>reviews</p>

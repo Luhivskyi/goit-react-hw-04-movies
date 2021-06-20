@@ -16,7 +16,16 @@ class Cast extends Component {
     const { cast } = this.state;
     return (
       <ul>
-        {cast && cast.cast.map(elem => <li key={elem.id}>{elem.name}</li>)}{' '}
+        {cast &&
+          cast.cast.map(elem => {
+            const poster = `https://image.tmdb.org/t/p/w300/${elem.profile_path}`;
+            return (
+              <li key={elem.id}>
+                <p>{elem.name}</p>
+                <img src={poster} alt="poster" />
+              </li>
+            );
+          })}
       </ul>
     );
   }
